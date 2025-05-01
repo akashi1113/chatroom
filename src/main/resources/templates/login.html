@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 聊天室</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f7ff;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6f0ff;
+            padding: 2rem;
+            width: 360px;
+            max-width: 90%;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: #2c5282;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border-radius: 4px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #cbd5e0;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 0.2rem rgba(49, 130, 206, 0.15);
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #718096;
+            z-index: 10;
+        }
+
+        .input-with-icon {
+            padding-left: 35px;
+        }
+
+        .btn-login {
+            background-color: #3182ce;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            padding: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-login:hover {
+            background-color: #2b6cb0;
+        }
+
+        .alert {
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #3182ce;
+        }
+    </style>
+</head>
+<body>
+<div class="login-card">
+    <div class="logo-area">
+        <i class="fas fa-comments logo-icon"></i>
+    </div>
+    <h3 class="card-title">聊天室登录</h3>
+    <form th:action="@{/login}" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">用户名</label>
+            <div class="input-group">
+                <span class="input-icon"><i class="fas fa-user"></i></span>
+                <input type="text" id="username" name="username" class="form-control input-with-icon" required placeholder="请输入用户名">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">密码</label>
+            <div class="input-group">
+                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                <input type="password" id="password" name="password" class="form-control input-with-icon" required placeholder="请输入密码">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-login w-100 text-white mt-2">登录</button>
+    </form>
+    <div th:if="${error}" class="alert alert-danger mt-3" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>登录失败，请检查用户名和密码。
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

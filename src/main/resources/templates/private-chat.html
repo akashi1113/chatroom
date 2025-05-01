@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私聊</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --primary-light: #e9f2fb;
+      --secondary-color: #2980b9;
+      --text-color: #333;
+      --light-gray: #ecf0f1;
+      --border-color: #d9e2ec;
+      --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fafc;
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .chat-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .chat-header h1 {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    .chat-header span {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .chat-icon {
+      margin-left: 10px;
+      color: var(--primary-color);
+    }
+
+    #messages {
+      height: 400px;
+      overflow-y: auto;
+      padding: 15px;
+      background-color: var(--primary-light);
+      border-radius: 6px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .message {
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background-color: #fff;
+      box-shadow: var(--shadow);
+      max-width: 80%;
+    }
+
+    .message.outgoing {
+      background-color: var(--primary-color);
+      color: white;
+      margin-left: auto;
+    }
+
+    .message-sender {
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: var(--secondary-color);
+    }
+
+    .message.outgoing .message-sender {
+      color: #e9f2fb;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    #input {
+      flex-grow: 1;
+      padding: 12px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    #input:focus {
+      border-color: var(--primary-color);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .status {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat-header">
+    <h1>与 <span id="targetName"></span> 私聊中</h1>
+    <span class="chat-icon">✉️</span>
+  </div>
+
+  <div id="messages"></div>
+
+  <div class="input-container">
+    <input type="text" id="input" placeholder="输入私聊内容" />
+    <button onclick="sendPrivateMessage()">发送</button>
+  </div>
+
+  <div class="status" id="status">已连接</div>
+</div>
+
+<script th:inline="javascript">
+  var urlParams = new URLSearchParams(window.location.search);
+  var targetUser = /*[[${targetUser}]]*/ 'default';
+  var nickname = /*[[${username}]]*/ 'me';
+  var socket;
+  document.getElementById('targetName').textContent = targetUser;
+
+  function connect() {
+    socket = new WebSocket("ws://localhost:8081/chat");
+
+    document.getElementById('status').textContent = '正在连接...';
+
+    socket.onopen = function() {
+      console.log("私聊页面 WebSocket连接成功 🎉");
+      document.getElementById('status').textContent = '已连接';
+
+      // 发送NICKNAME绑定
+      var nicknameMessage = {
+        header: {
+          messageType: "NICKNAME",
+          messageId: new Date().getTime().toString(),
+          messageLength: nickname.length,
+          checksum: nickname.hashCode()
+        },
+        payload: nickname
+      };
+      socket.send(JSON.stringify(nicknameMessage));
+    };
+
+    socket.onmessage = function(event) {
+      console.log("收到服务器消息: " + event.data);
+
+      var data = JSON.parse(event.data);
+      if (data && data.payload) {
+        var messageBox = document.getElementById("messages");
+        var div = document.createElement("div");
+        div.className = "message";
+
+        // 判断是否为自己发送的消息
+        if (data.header && data.header.sender === nickname) {
+          div.className += " outgoing";
+        }
+
+        // 消息发送者
+        var sender = document.createElement("div");
+        sender.className = "message-sender";
+        sender.textContent = (data.header && data.header.sender) || "系统";
+        div.appendChild(sender);
+
+        // 消息内容
+        var content = document.createElement("div");
+        content.className = "message-content";
+        content.textContent = data.payload;
+        div.appendChild(content);
+
+        messageBox.appendChild(div);
+        messageBox.scrollTop = messageBox.scrollHeight;
+      }
+    };
+
+    socket.onclose = function() {
+      console.log("连接关闭");
+      document.getElementById('status').textContent = '连接已关闭';
+    };
+
+    socket.onerror = function(error) {
+      console.error("连接错误", error);
+      document.getElementById('status').textContent = '连接错误';
+    };
+  }
+
+  function sendPrivateMessage() {
+    var input = document.getElementById("input");
+    var content = input.value.trim();
+    if (!content) return;
+
+    var payload = targetUser + "|||" + content;
+
+    var privateMessage = {
+      header: {
+        messageType: "PRIVATE_CHAT",
+        messageId: new Date().getTime().toString(),
+        messageLength: payload.length,
+        checksum: payload.hashCode(),
+        sender: nickname
+      },
+      payload: payload
+    };
+
+    socket.send(JSON.stringify(privateMessage));
+
+    // 在消息框中显示自己发送的消息
+    var messageBox = document.getElementById("messages");
+    var div = document.createElement("div");
+    div.className = "message outgoing";
+
+    var sender = document.createElement("div");
+    sender.className = "message-sender";
+    sender.textContent = nickname + " (我)";
+    div.appendChild(sender);
+
+    var msgContent = document.createElement("div");
+    msgContent.className = "message-content";
+    msgContent.textContent = content;
+    div.appendChild(msgContent);
+
+    messageBox.appendChild(div);
+    messageBox.scrollTop = messageBox.scrollHeight;
+
+    input.value = '';
+  }
+
+  // 按回车键发送消息
+  document.getElementById("input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      sendPrivateMessage();
+    }
+  });
+
+  // 字符串hashCode
+  String.prototype.hashCode = function() {
+    var hash = 0;
+    for (var i = 0; i < this.length; i++) {
+      hash = (hash << 5) - hash + this.charCodeAt(i);
+      hash |= 0;
+    }
+    return hash;
+  };
+
+  window.onload = function() {
+    connect();
+  };
+</script>
+
+</body>
+</html>

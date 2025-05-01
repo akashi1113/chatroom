@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-light: #e9f2fb;
+            --secondary-color: #2980b9;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --border-color: #d9e2ec;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            overflow: hidden;
+        }
+
+        #chatContainer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #f8fafc;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .chat-header h1 {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .room-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+
+        .chat-icon {
+            margin-left: 10px;
+            color: var(--primary-color);
+        }
+
+        #messages {
+            flex: 1;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+        }
+
+        .message {
+            padding: 12px 18px;
+            margin-bottom: 14px;
+            border-radius: 18px;
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            max-width: 80%;
+            border-top-left-radius: 4px;
+        }
+
+        .message.self {
+            background-color: var(--primary-color);
+            color: white;
+            margin-left: auto;
+            border-top-left-radius: 18px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-sender {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: var(--secondary-color);
+        }
+
+        .message.self .message-sender {
+            color: #e9f2fb;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        #input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #input:focus {
+            border-color: var(--primary-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-left: 1px solid var(--border-color);
+            height: 100%;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-left-radius: 12px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        #onlineUsers {
+            padding: 20px;
+            background-color: #f9fbfd;
+            border-radius: 14px;
+            margin: 15px;
+        }
+
+        .user-item {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 12px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .user-item:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .user-name {
+            font-weight: 500;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+
+        .status {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chatContainer">
+    <div class="chat-header">
+        <h1>聊天室 <span class="room-name" id="roomNameDisplay"></span><span class="chat-icon">💬</span></h1>
+    </div>
+
+    <div id="messages"></div>
+
+    <div class="input-container">
+        <input type="text" id="input" placeholder="输入聊天内容" />
+        <button onclick="sendMessage()">发送</button>
+    </div>
+
+    <div class="status" id="status">已连接</div>
+</div>
+
+<div id="sidebar">
+    <div class="sidebar-header">
+        <h2>当前在线用户</h2>
+    </div>
+    <div id="onlineUsers">
+        <!-- 在线用户动态加载 -->
+    </div>
+</div>
+
+<script>
+    // 获取在线用户
+    function fetchOnlineUsers() {
+        fetch('/online-users')
+            .then(response => response.json())
+            .then(data => {
+                const userListDiv = document.getElementById('onlineUsers');
+                userListDiv.innerHTML = ''; // 清空列表
+                data.forEach(username => {
+                    const userDiv = document.createElement('div');
+                    userDiv.className = 'user-item';
+
+                    // 创建头像元素
+                    const avatar = document.createElement('div');
+                    avatar.className = 'user-avatar';
+                    avatar.textContent = username.charAt(0).toUpperCase();
+
+                    // 创建用户名元素
+                    const nameSpan = document.createElement('span');
+                    nameSpan.className = 'user-name';
+                    nameSpan.textContent = username;
+
+                    // 创建在线状态指示器
+                    const statusDot = document.createElement('span');
+                    statusDot.className = 'status-indicator';
+
+                    // 添加所有元素到用户项
+                    userDiv.appendChild(avatar);
+                    userDiv.appendChild(nameSpan);
+                    userDiv.appendChild(statusDot);
+
+                    userDiv.addEventListener('dblclick', function() {
+                        if (username === nickname) {
+                            alert("不能和自己私聊哦～😅");
+                            return;
+                        }
+                        // 双击后，打开新的私聊页面
+                        window.open('/private-chat?target=' + encodeURIComponent(username), '_blank', 'width=600,height=500');
+                    });
+
+                    userListDiv.appendChild(userDiv);
+                });
+            });
+    }
+
+    // 页面加载后立刻刷新一次
+    fetchOnlineUsers();
+
+    // 每5秒刷新一次
+    setInterval(fetchOnlineUsers, 5000);
+</script>
+
+<script th:inline="javascript">
+    var nickname = [[${username}]]; // 获取当前用户名
+    var roomName = [[${roomName}]];
+    var socket;
+
+    function connect() {
+        socket = new WebSocket("ws://localhost:8081/chat");
+
+        document.getElementById('status').textContent = '正在连接...';
+
+        socket.onopen = function() {
+            console.log("WebSocket连接成功 🎉");
+            document.getElementById('status').textContent = '已连接';
+
+            // roomName = prompt("请输入要加入的房间名：", "defaultRoom");
+            document.getElementById('roomNameDisplay').textContent = roomName;
+
+            // 发送昵称（第一次发的是昵称）
+            var nicknameMessage = {
+                header: {
+                    messageType: "NICKNAME",
+                    messageId: new Date().getTime().toString(),
+                    messageLength: nickname.length,
+                    checksum: nickname.hashCode()
+                },
+                payload: nickname
+            };
+            socket.send(JSON.stringify(nicknameMessage));
+
+            // 发送加入房间请求
+            var joinRoomMessage = {
+                header: {
+                    messageType: "JOIN_ROOM",
+                    messageId: (new Date().getTime() + 1).toString(),
+                    messageLength: roomName.length,
+                    checksum: roomName.hashCode()
+                },
+                payload: roomName
+            };
+            socket.send(JSON.stringify(joinRoomMessage));
+
+            // 启动心跳定时器，每30秒发送一次心跳
+            setInterval(function() {
+                var heartbeatMessage = {
+                    header: {
+                        messageType: "HEARTBEAT",
+                        messageId: (new Date().getTime() + 2).toString(),
+                        messageLength: "heartbeat".length,
+                        checksum: "heartbeat".hashCode()
+                    },
+                    payload: "heartbeat"
+                };
+                socket.send(JSON.stringify(heartbeatMessage));
+                console.log("发送心跳 💓");
+            }, 30000);
+        };
+
+        socket.onmessage = function(event) {
+            console.log("收到服务器消息: " + event.data);
+
+            var data = JSON.parse(event.data);
+            if (data && data.payload) {
+                var messageBox = document.getElementById("messages");
+                var div = document.createElement("div");
+
+                // 创建消息元素
+                div.className = "message";
+
+                // 检查消息是否包含发送者信息，以确定是否为自己发送的消息
+                var senderName = "";
+                var messageContent = data.payload;
+
+                // 简单解析消息格式，假设格式为 "用户名: 消息内容"
+                if (data.payload.includes(": ")) {
+                    var parts = data.payload.split(": ");
+                    senderName = parts[0];
+                    messageContent = parts.slice(1).join(": ");
+
+                    // 如果发送者是当前用户，添加特殊样式
+                    if (senderName === nickname) {
+                        div.className += " self";
+                    }
+                }
+
+                // 添加发送者名称元素
+                if (senderName) {
+                    var sender = document.createElement("div");
+                    sender.className = "message-sender";
+                    sender.textContent = senderName;
+                    div.appendChild(sender);
+                }
+
+                // 添加消息内容
+                var content = document.createElement("div");
+                content.className = "message-content";
+                content.textContent = messageContent;
+                div.appendChild(content);
+
+                messageBox.appendChild(div);
+                messageBox.scrollTop = messageBox.scrollHeight;
+            } else {
+                console.error("非法消息格式", event.data);
+            }
+        };
+
+        socket.onclose = function() {
+            console.log("连接关闭");
+            document.getElementById('status').textContent = '连接已关闭';
+        };
+
+        socket.onerror = function(error) {
+            console.error("连接错误", error);
+            document.getElementById('status').textContent = '连接错误';
+        };
+    }
+
+    function sendMessage() {
+        var input = document.getElementById("input");
+        var content = input.value.trim();
+        if (!content) return;
+
+        var chatMessage = {
+            header: {
+                messageType: "CHAT",
+                messageId: new Date().getTime().toString(),
+                messageLength: content.length,
+                checksum: content.hashCode()
+            },
+            payload: content
+        };
+
+        socket.send(JSON.stringify(chatMessage));
+        input.value = '';
+    }
+
+    // 按回车键发送消息
+    document.getElementById("input").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    // 简单实现字符串hashCode（模拟Java的hashCode）
+    String.prototype.hashCode = function() {
+        var hash = 0;
+        for (var i = 0; i < this.length; i++) {
+            hash = (hash << 5) - hash + this.charCodeAt(i);
+            hash |= 0; // 转为32位整数
+        }
+        return hash;
+    };
+
+    // 页面加载完成后自动连接
+    window.onload = function() {
+        connect();
+    };
+</script>
+
+</body>
+</html>

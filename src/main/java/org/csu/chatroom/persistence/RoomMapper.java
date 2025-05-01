@@ -11,6 +11,7 @@ import java.util.List;
 public interface RoomMapper{
     public int createRoom(Room room);
     public List<Room> getRooms();
-    public Room getRoom(int id);
+    public Room getRoomById(int id);
+    public Room getRoomByName(String name);
 }
 

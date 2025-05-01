@@ -11,7 +11,11 @@
         SELECT * FROM room
     </select>
 
-    <select id="getRoom" resultType="Room">
+    <select id="getRoomById" resultType="Room">
         SELECT * FROM room WHERE id = #{id}
+    </select>
+
+    <select id="getRoomByName" resultType="Room">
+        SELECT * FROM room WHERE name = #{name}
     </select>
 </mapper>

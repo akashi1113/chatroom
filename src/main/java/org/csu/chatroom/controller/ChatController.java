@@ -4,8 +4,7 @@ package org.csu.chatroom.controller;
 import jakarta.servlet.http.HttpSession;
 import org.csu.chatroom.entity.Room;
 import org.csu.chatroom.entity.User;
-import org.csu.chatroom.persistence.RoomMapper;
-import org.csu.chatroom.persistence.UserMapper;
+import org.csu.chatroom.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +20,12 @@ import java.util.List;
 public class ChatController {
 
     @Autowired
-    private RoomMapper roomMapper;
+    private RoomService roomService;
 
     @GetMapping("/chat/{roomId}")
     public String chatPage(Model model, HttpSession session, @PathVariable int roomId) {
         User user = (User) session.getAttribute("user");  // 从 Session 中获取用户信息
-        Room room=roomMapper.getRoom(roomId);
+        Room room=roomService.getRoomById(roomId);
         if (user == null) {
             return "redirect:/login";  // 如果用户未登录，重定向到登录页面
         }
@@ -49,7 +48,7 @@ public class ChatController {
         model.addAttribute("user", user);  // 将用户信息传递给视图
 
         // 获取所有聊天室
-        List<Room> rooms = roomMapper.getRooms();
+        List<Room> rooms = roomService.getRooms();
         model.addAttribute("rooms", rooms);
 
         return "chat-home";  // 返回聊天首页视图
@@ -65,7 +64,7 @@ public class ChatController {
         // 创建新聊天室
         Room room = new Room();
         room.setName(name);
-        roomMapper.createRoom(room);
+        roomService.createRoom(room);
         redirectAttributes.addAttribute("roomId", room.getId());
 
         // 创建聊天室后跳转到该聊天室的界面

@@ -10,7 +10,10 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+
 
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
@@ -27,6 +30,8 @@ public class NettyServer {
     private final Map<Channel, Long> lastHeartbeat = new HashMap<>(); // 存储每个客户端的心跳时间戳
     private final BlockingQueue<String> messageQueue = new LinkedBlockingQueue<>(); // 消息队列
     private final ConcurrentHashMap<Channel, String> channelUserMap = new ConcurrentHashMap<>();  // 保存 Channel 与 User 绑定关系
+    @Autowired
+    private ApplicationContext context;
 
     @PostConstruct
     public void init() {
@@ -39,11 +44,8 @@ public class NettyServer {
         }).start();
     }
 
-
-
     // 绑定用户与 Channel
     public void bindUserToChannel(String username, Channel channel) {
-
         channelUserMap.put(channel, username);  // 将 username 和 channel 绑定
     }
 
@@ -61,19 +63,13 @@ public class NettyServer {
         return null;
     }
 
-
-
     public void start() throws InterruptedException {
-
         // 启动消息处理线程
         new Thread(this::processMessages).start();
-
-
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
-
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
@@ -88,7 +84,7 @@ public class NettyServer {
                             pipeline.addLast(new ChunkedWriteHandler());
                             // 处理WebSocket升级握手，指定访问路径是 "/chat"
                             pipeline.addLast(new WebSocketServerProtocolHandler("/chat", null, true)); // 确保WebSocket协议处理
-                            pipeline.addLast(new SimpleServerHandler(NettyServer.this));  // 这里传递
+                            pipeline.addLast(context.getBean(SimpleServerHandler.class));  // 这里传递
                         }
                     });
 
@@ -104,7 +100,6 @@ public class NettyServer {
             workerGroup.shutdownGracefully();
         }
     }
-
 
     // 检查心跳
     public void checkHeartbeat() {
@@ -131,25 +126,12 @@ public class NettyServer {
     }
 
 
-
     public void addChannel(Channel channel) {
         channels.add(channel);
     }
 
     public void removeChannel(Channel channel) {
         channels.remove(channel);
-    }
-
-    // 创建聊天室
-    public Room createRoom(String name) {
-        Room room = new Room(name);
-        rooms.put(name, room);
-        return room;
-    }
-
-    // 获取聊天室
-    public Room getRoom(String name) {
-        return rooms.get(name);
     }
 
     // 处理消息的线程
@@ -171,6 +153,36 @@ public class NettyServer {
         messageQueue.add(message);
     }
 
+    // 添加房间管理方法
+    public synchronized Room getOrCreateRoom(String roomName) {
+        return rooms.computeIfAbsent(roomName, name -> {
+            Room room = context.getBean(Room.class);
+            room.init(name);
+            return room;
+        });
+    }
 
+    public void joinRoom(Channel channel, String roomName, String username) {
+        Room room = getOrCreateRoom(roomName);
+        room.addUser(channel);
+        userRooms.put(channel, room);
+        bindUserToChannel(username, channel);
+        System.out.println(username + " 加入了房间: " + roomName);
+        room.broadcastMessage(username + " 已加入 " + roomName + " 📢",-1);
+    }
+
+    public Room getRoomByChannel(Channel channel) {
+        return userRooms.get(channel);
+    }
+
+    public void leaveRoom(Channel channel) {
+        Room room = userRooms.remove(channel);
+        if (room != null) {
+            room.removeUser(channel);
+            String username = getUsernameByChannel(channel);
+            System.out.println(username + " 离开了房间: " + room.getName());
+            room.broadcastMessage(username + " 已离开 " + " 📢",-1);
+        }
+    }
 }
 

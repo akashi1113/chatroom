@@ -1,33 +1,30 @@
 package org.csu.chatroom.Netty;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
-import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
-import io.netty.util.CharsetUtil;
-
+import org.csu.chatroom.service.UserService;
 import org.csu.chatroom.util.OnlineUserManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+@Component
+@ChannelHandler.Sharable
 public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
-
+    @Autowired
+    private UserService userService;
     public static final String TYPE_PRIVATE_CHAT = "PRIVATE_CHAT";  //
-
-
-
-    private String nickname;
+//    private String nickname;
     private static final Map<String, String> USER_CREDENTIALS = new HashMap<>();  // 存储用户的用户名和密码
     private NettyServer nettyServer;  // 手动传入 NettyServer
     private Room currentRoom;
+    @Autowired
     public SimpleServerHandler(NettyServer nettyServer) {
         this.nettyServer = nettyServer;
     }
@@ -37,26 +34,16 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
         // 当客户端连接时，添加到在线用户列表
         nettyServer.addChannel(ctx.channel());
         System.out.println("客户端 " + ctx.channel().remoteAddress() + " 上线");
-
     }
-
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-
-
         String username = nettyServer.getUsernameByChannel(ctx.channel());  // 获取该用户的用户名
         if (username != null) {
             OnlineUserManager.removeUser(username);  // 移除在线用户
             System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线，移除在线用户：" + username);
         }
-        // 当客户端断开时，从在线用户列表中移除
-        nettyServer.removeChannel(ctx.channel());
         System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线");
-        // 当客户端断开时，从在线用户列表中移除
-
-
-//        currentRoom.removeUser(ctx.channel());
     }
 
     @Override
@@ -79,16 +66,14 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
 
         if ("NICKNAME".equals(messageType)) {
             nettyServer.bindUserToChannel(payload,ctx.channel());
-            nickname = nettyServer.getUsernameByChannel(ctx.channel());
+//            nickname = nettyServer.getUsernameByChannel(ctx.channel());
             System.out.println("收到来自 " + ctx.channel().remoteAddress() + " 的心跳包 💓");
             return;
         }
 
-
-        // 【新增处理：私聊消息】
+        String currentNickname = nettyServer.getUsernameByChannel(ctx.channel());
         if (TYPE_PRIVATE_CHAT.equals(messageType)) {
-            // payload里面需要包含【目标用户名】和【私聊内容】
-            // 我们简单一点，payload规定格式: "目标用户名|||消息内容"
+            //"目标用户名|||消息内容"
             String[] parts = payload.split("\\|\\|\\|");
             if (parts.length == 2) {
                 String targetUsername = parts[0];
@@ -105,29 +90,26 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
                     header.setMessageLength(privateContent.length());
                     header.setChecksum(String.valueOf(privateContent.hashCode()));
                     privateMessage.setHeader(header);
-                    privateMessage.setPayload(nickname + "（私聊）: " + privateContent);
+                    privateMessage.setPayload(currentNickname + "（私聊）: " + privateContent);
 
                     // 发给目标用户
-                    targetChannel.writeAndFlush(new TextWebSocketFrame(new ObjectMapper().writeValueAsString(privateMessage)));
+                    targetChannel.writeAndFlush(new TextWebSocketFrame(mapper.writeValueAsString(privateMessage)));
                 }
             } else {
                 System.err.println("私聊消息格式错误: " + payload);
             }
-            return;  // 处理完了直接return
+            return;
         }
-        // 处理昵称与房间逻辑
-       if (currentRoom == null) {
-            Room room = nettyServer.getRoom(payload);
-            if (room == null) {
-                room = nettyServer.createRoom(payload);
-            }
-            currentRoom = room;
-            room.addUser(ctx.channel());
-            room.broadcastMessage(nickname + " 已加入 " + payload + " 📢");
-        } else {
-            System.out.println(currentRoom);
-            currentRoom.broadcastMessage(nickname + ": " + payload + " 💬");
+
+        //房间逻辑
+        if ("JOIN_ROOM".equals(messageType)) {
+            nettyServer.joinRoom(ctx.channel(), payload, currentNickname);
+            currentRoom = nettyServer.getRoomByChannel(ctx.channel());
+            return;
         }
+
+        //发送群聊消息
+        currentRoom.broadcastMessage(payload,userService.getUserId(currentNickname));
     }
 
     @Override
@@ -136,29 +118,4 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
         ctx.close();
     }
 
-//    @Override
-//    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-//        if (evt instanceof WebSocketServerProtocolHandler.HandshakeComplete) {
-//            WebSocketServerProtocolHandler.HandshakeComplete handshake = (WebSocketServerProtocolHandler.HandshakeComplete) evt;
-//
-//            String requestUri = handshake.requestUri();  // 获取客户端连接时的URI
-//            System.out.println("握手完成，连接的URI：" + requestUri);
-//
-//            QueryStringDecoder decoder = new QueryStringDecoder(requestUri);
-//            Map<String, List<String>> parameters = decoder.parameters();
-//
-//            if (parameters.containsKey("username")) {
-//                String username = parameters.get("username").get(0);
-//                System.out.println("绑定用户：" + username);
-//
-//                nettyServer.bindUserToChannel(username, ctx.channel());  // 将用户名和Channel绑定
-//            } else {
-//                System.err.println("连接未提供用户名，拒绝连接！");
-//                ctx.close();  // 如果没有用户名，关闭连接
-//                return;  // 如果没有用户名，跳过后续逻辑
-//            }
-//        } else {
-//            super.userEventTriggered(ctx, evt);  // 传递其他事件
-//        }
-//    }
 }

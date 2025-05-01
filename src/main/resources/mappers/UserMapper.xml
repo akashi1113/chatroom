@@ -6,4 +6,12 @@
     <select id="login" resultType="User">
         SELECT * FROM user WHERE username = #{username} AND password = #{password}
     </select>
+
+    <select id="getUserId">
+        SELECT id FROM user WHERE username = #{username}
+    </select>
+
+    <select id="getUserName">
+        SELECT username FROM user WHERE id = #{id}
+    </select>
 </mapper>

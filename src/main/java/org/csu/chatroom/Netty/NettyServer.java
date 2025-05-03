@@ -302,6 +302,7 @@ public class NettyServer {
         if (receiverChannel != null) {
             Message notification = new Message();
             Message.MessageHeader header = new Message.MessageHeader();
+            header.setCreateTime(new Date());
             header.setMessageType("PRIVATE_NOTIFICATION");
             header.setMessageId(System.currentTimeMillis() + "");
             notification.setHeader(header);

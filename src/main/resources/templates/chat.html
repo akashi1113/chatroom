@@ -374,24 +374,31 @@
                 // 检查消息是否包含发送者信息，以确定是否为自己发送的消息
                 var senderName = data.header.sender;
                 var messageContent = data.payload;
+                var createTime = data.header.createTime;
 
                 // 简单解析消息格式，假设格式为 "用户名: 消息内容"
                 if (data.payload.includes(": ")) {
                     var parts = data.payload.split(": ");
                     senderName = parts[0];
                     messageContent = parts.slice(1).join(": ");
+                }
 
-                    // 如果发送者是当前用户，添加特殊样式
-                    if (senderName === nickname) {
-                        div.className += " self";
-                    }
+                // 如果发送者是当前用户，添加特殊样式
+                if (senderName === nickname) {
+                    div.className += " self";
                 }
 
                 // 添加发送者名称元素
                 if (senderName) {
                     var sender = document.createElement("div");
                     sender.className = "message-sender";
-                    sender.textContent = senderName;
+                    sender.textContent = senderName + "\u00A0\u00A0\u00A0\u00A0" + formatTime(createTime);                    div.appendChild(sender);
+                    div.appendChild(sender);
+                }
+                else{
+                    var sender = document.createElement("div");
+                    sender.className = "message-sender";
+                    sender.textContent = formatTime(createTime);
                     div.appendChild(sender);
                 }
 
@@ -417,6 +424,29 @@
             console.error("连接错误", error);
             document.getElementById('status').textContent = '连接错误';
         };
+    }
+
+    function formatTime(timestamp) {
+        const date = new Date(timestamp);
+        const now = new Date();
+
+        const isToday = (
+            date.getDate() === now.getDate() &&
+            date.getMonth() === now.getMonth() &&
+            date.getFullYear() === now.getFullYear()
+        );
+
+        if (isToday) {
+            // 如果是今天，只返回时间
+            return date.getHours().toString().padStart(2, '0') + ":" +
+                date.getMinutes().toString().padStart(2, '0');
+        } else {
+            // 否则返回完整日期
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            return `${year}-${month}-${day} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+        }
     }
 
     function sendMessage() {

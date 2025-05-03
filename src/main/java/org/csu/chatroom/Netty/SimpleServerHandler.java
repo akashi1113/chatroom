@@ -71,13 +71,13 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
         }
 
         //获取历史消息
-        if ("GET_HISTORY".equals(messageType)) {
-            Room room = nettyServer.getCurrentRoom(ctx.channel());
-            if (room != null) {
-                room.sendHistory(ctx.channel());
-            }
-            return;
-        }
+//        if ("GET_HISTORY".equals(messageType)) {
+//            Room room = nettyServer.getCurrentRoom(ctx.channel());
+//            if (room != null) {
+//                room.sendHistory(ctx.channel());
+//            }
+//            return;
+//        }
 
         //进入私聊房间
         if ("JOIN_PRIVATE".equals(messageType)) {

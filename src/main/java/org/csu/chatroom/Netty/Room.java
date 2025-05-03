@@ -87,6 +87,7 @@ public class Room {
                 String.valueOf(displayContent.hashCode())
         );
         header.setSender(userService.getUserName(senderId));
+        header.setCreateTime(message.getCreateTime());
         Message msg = new Message(header, displayContent);
         String json = convertToJson(msg);
 
@@ -119,6 +120,7 @@ public class Room {
         header.setMessageLength(content.length());
         header.setChecksum(String.valueOf(content.hashCode()));
         header.setSender(senderName);
+        header.setCreateTime(message.getCreateTime());
 
         Message msg = new Message(header, content);
         String json = convertToJson(msg);
@@ -156,6 +158,7 @@ public class Room {
                     String.valueOf(message.getContent().hashCode())
             );
             header.setSender(userService.getUserName(message.getSender()));
+            header.setCreateTime(message.getCreateTime());
 
             Message msg = new Message(header, message.getContent());
             String jsonMessage = convertToJson(msg);

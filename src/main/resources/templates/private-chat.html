@@ -237,9 +237,11 @@
         }
 
         // 消息发送者
+        var senderName = (data.header && data.header.sender) || "系统";
+        var createTime = data.header.createTime;
         var sender = document.createElement("div");
         sender.className = "message-sender";
-        sender.textContent = (data.header && data.header.sender) || "系统";
+        sender.textContent = senderName + "\u00A0\u00A0\u00A0\u00A0" + formatTime(createTime);
         div.appendChild(sender);
 
         // 消息内容
@@ -316,9 +318,33 @@
     socket.send(JSON.stringify(historyRequest));
   }
 
+  function formatTime(timestamp) {
+    const date = new Date(timestamp);
+    const now = new Date();
+
+    const isToday = (
+            date.getDate() === now.getDate() &&
+            date.getMonth() === now.getMonth() &&
+            date.getFullYear() === now.getFullYear()
+    );
+
+    if (isToday) {
+      // 如果是今天，只返回时间
+      return date.getHours().toString().padStart(2, '0') + ":" +
+              date.getMinutes().toString().padStart(2, '0');
+    } else {
+      // 否则返回完整日期
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const day = date.getDate().toString().padStart(2, '0');
+      return `${year}-${month}-${day} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+    }
+  }
+
   function sendPrivateMessage() {
     var input = document.getElementById("input");
     var content = input.value.trim();
+    var currentTime = new Date().getTime();
     if (!content) return;
 
     var payload = targetUser + "|||" + content;
@@ -343,7 +369,7 @@
 
     var sender = document.createElement("div");
     sender.className = "message-sender";
-    sender.textContent = nickname + " (我)";
+    sender.textContent = nickname + " (我)" + "\u00A0\u00A0\u00A0\u00A0" + formatTime(currentTime);
     div.appendChild(sender);
 
     var msgContent = document.createElement("div");

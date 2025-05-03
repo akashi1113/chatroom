@@ -2,6 +2,8 @@ package org.csu.chatroom.Netty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Date;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Message {
     private MessageHeader header;
@@ -44,6 +46,7 @@ public class Message {
         private int messageLength;  // 可以忽略，不用前端传
         private String checksum;    // 可以忽略，不用前端传
         private String roomName;
+        private Date createTime;
 
         public MessageHeader() {
         }
@@ -53,6 +56,14 @@ public class Message {
             this.messageId = messageId;
             this.messageLength = messageLength;
             this.checksum = checksum;
+        }
+
+        public Date getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Date createTime) {
+            this.createTime = createTime;
         }
 
         public String getRoomName() {

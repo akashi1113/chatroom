@@ -164,10 +164,24 @@
   var targetUser = /*[[${targetUser}]]*/ 'default';
   var nickname = /*[[${username}]]*/ 'me';
   var socket;
-  document.getElementById('targetName').textContent = targetUser;
+
+  // 页面初始化
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('targetName').textContent = targetUser;
+    document.title = `与 ${targetUser} 的私聊`;
+    connect();
+
+    // 窗口关闭时通知服务器
+    window.addEventListener('beforeunload', function() {
+      leavePrivateChat();
+      if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.close();
+      }
+    });
+  });
 
   function connect() {
-    socket = new WebSocket("ws://localhost:8081/chat");
+    socket = new WebSocket("ws://localhost:8081/chat?type=private");
 
     document.getElementById('status').textContent = '正在连接...';
 
@@ -186,6 +200,26 @@
         payload: nickname
       };
       socket.send(JSON.stringify(nicknameMessage));
+
+      joinPrivateChat();
+
+      //加载历史消息
+      // loadPrivateHistory();
+
+      // 启动心跳定时器，每30秒发送一次心跳
+      setInterval(function() {
+        var heartbeatMessage = {
+          header: {
+            messageType: "HEARTBEAT",
+            messageId: (new Date().getTime() + 2).toString(),
+            messageLength: "heartbeat".length,
+            checksum: "heartbeat".hashCode()
+          },
+          payload: "heartbeat"
+        };
+        socket.send(JSON.stringify(heartbeatMessage));
+        console.log("发送心跳 💓");
+      }, 30000);
     };
 
     socket.onmessage = function(event) {
@@ -228,6 +262,58 @@
       console.error("连接错误", error);
       document.getElementById('status').textContent = '连接错误';
     };
+  }
+
+  // 加入私聊
+  function joinPrivateChat() {
+    if (!socket || socket.readyState !== WebSocket.OPEN) return;
+
+    var joinPrivateMessage = {
+      header: {
+        messageType: "JOIN_PRIVATE",
+        messageId: (new Date().getTime() + 1).toString(),
+        targetUser: targetUser,
+        messageLength: targetUser.length,
+        checksum: targetUser.hashCode(),
+        sender: nickname
+      },
+      payload: targetUser
+    };
+    socket.send(JSON.stringify(joinPrivateMessage));
+    console.log("已加入与 " + targetUser + " 的私聊");
+  }
+
+  // 离开私聊
+  function leavePrivateChat() {
+    if (!socket || socket.readyState !== WebSocket.OPEN) return;
+
+    var leavePrivateMessage = {
+      header: {
+        messageType: "LEAVE_PRIVATE",
+        messageId: new Date().getTime().toString(),
+        messageLength: targetUser.length,
+        checksum: targetUser.hashCode(),
+        sender: nickname
+      },
+      payload: targetUser
+    };
+    socket.send(JSON.stringify(leavePrivateMessage));
+    console.log("已离开与 " + targetUser + " 的私聊");
+  }
+
+  // 加载私聊历史
+  function loadPrivateHistory() {
+    var historyRequest = {
+      header: {
+        messageType: "GET_HISTORY",
+        messageId: new Date().getTime().toString(),
+        targetUser: targetUser,
+        messageLength: targetUser.length,
+        checksum: targetUser.hashCode()
+      },
+      payload: targetUser
+    };
+    socket.send(JSON.stringify(historyRequest));
   }
 
   function sendPrivateMessage() {
@@ -288,9 +374,9 @@
     return hash;
   };
 
-  window.onload = function() {
-    connect();
-  };
+  // window.onload = function() {
+  //   connect();
+  // };
 </script>
 
 </body>

@@ -31,6 +31,7 @@ public class ChatController {
         }
 
         model.addAttribute("user", user);
+        model.addAttribute("roomId", roomId);
         model.addAttribute("roomName", room.getName());
         model.addAttribute("username", user.getUsername());
 

@@ -16,4 +16,8 @@ public interface MessageMapper {
     List<Message> selectByTimeRange(@Param("roomId") int roomId,
                                     @Param("startTime") Date startTime,
                                     @Param("endTime") Date endTime);
+    List<Message> getPrivateMessages(
+            @Param("user1") int user1Id,
+            @Param("user2") int user2Id,
+            @Param("limit") int limit);
 }

@@ -15,5 +15,9 @@ public class Message {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
+
+    public boolean isPrivateMessage() {
+        return receiver != 0; // 如果receiver有值则是私聊，否则是群聊
+    }
 }
 

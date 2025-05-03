@@ -38,10 +38,12 @@ public class Message {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class MessageHeader {
+        private String sender;
         private String messageType;
         private String messageId;
         private int messageLength;  // 可以忽略，不用前端传
         private String checksum;    // 可以忽略，不用前端传
+        private String roomName;
 
         public MessageHeader() {
         }
@@ -51,6 +53,22 @@ public class Message {
             this.messageId = messageId;
             this.messageLength = messageLength;
             this.checksum = checksum;
+        }
+
+        public String getRoomName() {
+            return roomName;
+        }
+
+        public void setRoomName(String roomName) {
+            this.roomName = roomName;
+        }
+
+        public String getSender() {
+            return sender;
+        }
+
+        public void setSender(String sender) {
+            this.sender = sender;
         }
 
         public String getMessageType() {

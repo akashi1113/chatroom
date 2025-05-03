@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Component
 @Scope("prototype")
@@ -22,16 +19,33 @@ public class Room {
 
     @Autowired
     private UserService userService;
-
+    private boolean isPrivate = false;
+    private Set<Integer> privateUserIds = new HashSet<>();
     private String name;
     private int roomId;
     private List<Channel> users = new ArrayList<>();  // 存储聊天室内的用户
     private LinkedList<org.csu.chatroom.entity.Message> messages = new LinkedList<>();  // 存储消息记录（历史消息）
     private static final int MAX_HISTORY_SIZE = 100;  // 最大历史记录条数
 
+    public boolean isPrivate() {
+        return isPrivate;
+    }
+
+    public Set<Integer> getPrivateUserIds() {
+        return privateUserIds;
+    }
+
     public void init(String name) {
         this.name = name;
         this.roomId=roomService.getRoomByName(name).getId();
+        loadHistoryFromDatabase();
+    }
+
+    public void createPrivateRoom(String user1, String user2) {
+        this.isPrivate = true;
+        this.name = "私聊_" + user1 + "_" + user2;
+        this.privateUserIds.add(userService.getUserId(user1));
+        this.privateUserIds.add(userService.getUserId(user2));
         loadHistoryFromDatabase();
     }
 
@@ -41,58 +55,99 @@ public class Room {
 
     public void addUser(Channel user) {
         users.add(user);
-        sendHistory(user);  // 用户加入时，发送历史消息
     }
 
     public void removeUser(Channel user) {
         users.remove(user);
     }
 
-    public void broadcastMessage(String content, int sender) {
-        if (messages.size() >= MAX_HISTORY_SIZE) {
-            messages.poll();  // 删除最旧的消息，确保历史记录不会超出最大限制
+    //群聊消息专用
+    public void broadcastMessage(String content, int senderId) {
+        if (isPrivate) {
+            System.err.println("错误：不应在私聊房间使用 broadcastGroupMessage");
+            return;
         }
 
-        if(sender>=0){
-            //保存到数据库
-            org.csu.chatroom.entity.Message message = new org.csu.chatroom.entity.Message();
-            message.setRoomId(roomId);
-            message.setSender(sender);
-            message.setContent(content);
-            message.setCreateTime(new Date());
-            roomService.saveMessage(message);
-            content=userService.getUserName(sender) + ": " + content + " 💬";
-            System.out.println(content);
-            messages.add(message);//保存新消息到历史记录
-        }
+        org.csu.chatroom.entity.Message message = new org.csu.chatroom.entity.Message();
+        message.setSender(senderId);
+        message.setRoomId(roomId);
+        message.setContent(content);
+        message.setCreateTime(new Date());
 
+        if(senderId>0) roomService.saveMessage(message);
+        if (messages.size() >= MAX_HISTORY_SIZE) messages.poll();
+        messages.add(message);
+
+        String displayContent=content;
+        if(senderId>0) displayContent = userService.getUserName(senderId) + ": " + content + " 💬";
         Message.MessageHeader header = new Message.MessageHeader(
-                "CHAT",  // 消息类型
-                String.valueOf(System.currentTimeMillis()),  // 消息 ID
-                content.length(),  // 消息长度
-                String.valueOf(content.hashCode())  // 校验和
+                "CHAT",
+                String.valueOf(System.currentTimeMillis()),
+                displayContent.length(),
+                String.valueOf(displayContent.hashCode())
         );
+        header.setSender(userService.getUserName(senderId));
+        Message msg = new Message(header, displayContent);
+        String json = convertToJson(msg);
 
-        Message msg = new Message(header, content);
-        String jsonMessage = convertToJson(msg);
-
-        if (jsonMessage != null) {
-
+        if (json != null) {
             for (Channel user : users) {
-                System.out.println("count-----------------");
-
-                user.writeAndFlush(new TextWebSocketFrame(jsonMessage));
+                user.writeAndFlush(new TextWebSocketFrame(json));
             }
         }
     }
 
-    private void loadHistoryFromDatabase() {
-        List<org.csu.chatroom.entity.Message> history = roomService.getRecentMessages(roomId, MAX_HISTORY_SIZE);
-        messages.clear();
-        messages.addAll(history);
+    //私聊消息专用
+    public void sendPrivateMessage(String content, int senderId, int receiverId, Channel receiverChannel, String senderName) {
+        if (!isPrivate) {
+            System.err.println("错误：不应在非私聊房间使用 sendPrivateMessage");
+            return;
+        }
+
+        org.csu.chatroom.entity.Message message = new org.csu.chatroom.entity.Message();
+        message.setSender(senderId);
+        message.setReceiver(receiverId);
+        message.setContent(content);
+        message.setCreateTime(new Date());
+
+        roomService.saveMessage(message);
+        messages.add(message);
+
+        Message.MessageHeader header = new Message.MessageHeader();
+        header.setMessageType("PRIVATE_CHAT");
+        header.setMessageId(System.currentTimeMillis() + "");
+        header.setMessageLength(content.length());
+        header.setChecksum(String.valueOf(content.hashCode()));
+        header.setSender(senderName);
+
+        Message msg = new Message(header, content);
+        String json = convertToJson(msg);
+        if (json != null) {
+            receiverChannel.writeAndFlush(new TextWebSocketFrame(json));
+        }
     }
 
-    private void sendHistory(Channel user) {
+    private void loadHistoryFromDatabase() {
+        if (isPrivate) {
+            // 私聊房间加载双方消息
+            List<Integer> userIds = new ArrayList<>(privateUserIds);
+            if (userIds.size() == 2) {
+                List<org.csu.chatroom.entity.Message> history =
+                        roomService.getPrivateMessages(userIds.get(0), userIds.get(1), MAX_HISTORY_SIZE);
+                messages.clear();
+                messages.addAll(history);
+            }
+        } else {
+            // 群聊房间加载普通消息
+            List<org.csu.chatroom.entity.Message> history =
+                    roomService.getRecentMessages(roomId, MAX_HISTORY_SIZE);
+            messages.clear();
+            messages.addAll(history);
+        }
+    }
+
+    public void sendHistory(Channel user) {
+        loadHistoryFromDatabase();
         for (org.csu.chatroom.entity.Message message : messages) {
             Message.MessageHeader header = new Message.MessageHeader(
                     "HISTORY",  // 消息类型
@@ -100,6 +155,7 @@ public class Room {
                     message.getContent().length(),
                     String.valueOf(message.getContent().hashCode())
             );
+            header.setSender(userService.getUserName(message.getSender()));
 
             Message msg = new Message(header, message.getContent());
             String jsonMessage = convertToJson(msg);

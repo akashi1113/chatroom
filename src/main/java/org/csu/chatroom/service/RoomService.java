@@ -1,5 +1,6 @@
 package org.csu.chatroom.service;
 
+import org.apache.ibatis.annotations.Param;
 import org.csu.chatroom.entity.Message;
 import org.csu.chatroom.entity.Room;
 import org.csu.chatroom.persistence.MessageMapper;
@@ -51,5 +52,13 @@ public class RoomService {
     //按时间范围查询消息
     public List<Message> getMessagesByTimeRange(int roomId, Date startTime, Date endTime) {
         return messageMapper.selectByTimeRange(roomId, startTime, endTime);
+    }
+
+    // 获取私聊消息（双向查询）
+    public List<Message> getPrivateMessages(
+            @Param("user1") int user1Id,
+            @Param("user2") int user2Id,
+            @Param("limit") int limit){
+        return messageMapper.getPrivateMessages(user1Id, user2Id, limit);
     }
 }

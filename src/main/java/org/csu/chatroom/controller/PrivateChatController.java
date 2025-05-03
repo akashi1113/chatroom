@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PrivateChatController {
 
     @GetMapping("/private-chat")
-    public String privateChatPage(@RequestParam("target") String targetUser, Model model, HttpSession session) {
+    public String privateChatPage(@RequestParam("target") String targetUser,Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");  // 从 Session 中获取用户信息
         if (user == null) {
             return "redirect:/login";  // 如果用户未登录，重定向到登录页面

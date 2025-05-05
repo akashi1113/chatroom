@@ -34,17 +34,44 @@ public class SimpleServerHandler extends SimpleChannelInboundHandler<TextWebSock
         System.out.println("客户端 " + ctx.channel().remoteAddress() + " 上线");
     }
 
+    //    @Override
+//    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+//        String username = nettyServer.getUsernameByChannel(ctx.channel());  // 获取该用户的用户名
+//        if (username != null) {
+//            // 移除在线用户
+//            OnlineUserManager.removeUser(username);
+//            nettyServer.leaveRoom(ctx.channel());
+//            System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线，移除在线用户：" + username);
+//        }
+//        System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线");
+//    }
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         String username = nettyServer.getUsernameByChannel(ctx.channel());  // 获取该用户的用户名
-        if (username != null) {
-            // 移除在线用户
-            OnlineUserManager.removeUser(username);
-            nettyServer.leaveRoom(ctx.channel());
-            System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线，移除在线用户：" + username);
-        }
+
+        // 离开当前房间
+        nettyServer.leaveRoom(ctx.channel());
         System.out.println("客户端 " + ctx.channel().remoteAddress() + " 下线");
+
+        if (username != null) {
+            // 检查用户是否还有其他连接
+            boolean hasOtherConnections =
+                    (nettyServer.getChannelByUsername(username, true) != null ||
+                            nettyServer.getChannelByUsername(username, false) != null);
+
+            if (!hasOtherConnections) {
+                // 只有当用户没有其他连接时，才从在线用户列表中移除
+                OnlineUserManager.removeUser(username);
+                System.out.println("用户 " + username + " 的所有连接已断开，从在线列表中移除");
+            } else {
+                System.out.println("用户 " + username + " 仍有其他连接活跃，保持在线状态");
+            }
+        }
+
+        // 移除channel
+        nettyServer.removeChannel(ctx.channel());
     }
+
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame frame) throws Exception {

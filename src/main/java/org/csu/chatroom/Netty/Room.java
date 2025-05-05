@@ -62,6 +62,42 @@ public class Room {
     }
 
     //群聊消息专用
+//    public void broadcastMessage(String content, int senderId) {
+//        if (isPrivate) {
+//            System.err.println("错误：不应在私聊房间使用 broadcastGroupMessage");
+//            return;
+//        }
+//
+//        org.csu.chatroom.entity.Message message = new org.csu.chatroom.entity.Message();
+//        message.setSender(senderId);
+//        message.setRoomId(roomId);
+//        message.setContent(content);
+//        message.setCreateTime(new Date());
+//
+//        if(senderId>0) roomService.saveMessage(message);
+//        if (messages.size() >= MAX_HISTORY_SIZE) messages.poll();
+//        messages.add(message);
+//
+//        String displayContent=content;
+//        if(senderId>0) displayContent = userService.getUserName(senderId) + ": " + content + " 💬";
+//        Message.MessageHeader header = new Message.MessageHeader(
+//                "CHAT",
+//                String.valueOf(System.currentTimeMillis()),
+//                displayContent.length(),
+//                String.valueOf(displayContent.hashCode())
+//        );
+//        header.setSender(userService.getUserName(senderId));
+//        header.setCreateTime(message.getCreateTime());
+//        Message msg = new Message(header, displayContent);
+//        String json = convertToJson(msg);
+//
+//        if (json != null) {
+//            for (Channel user : users) {
+//                user.writeAndFlush(new TextWebSocketFrame(json));
+//            }
+//        }
+//    }
+
     public void broadcastMessage(String content, int senderId) {
         if (isPrivate) {
             System.err.println("错误：不应在私聊房间使用 broadcastGroupMessage");
@@ -80,13 +116,21 @@ public class Room {
 
         String displayContent=content;
         if(senderId>0) displayContent = userService.getUserName(senderId) + ": " + content + " 💬";
+
         Message.MessageHeader header = new Message.MessageHeader(
                 "CHAT",
                 String.valueOf(System.currentTimeMillis()),
                 displayContent.length(),
                 String.valueOf(displayContent.hashCode())
         );
-        header.setSender(userService.getUserName(senderId));
+
+        // 修改这里，处理系统消息的情况
+        if (senderId <= 0) {
+            header.setSender("系统");
+        } else {
+            header.setSender(userService.getUserName(senderId));
+        }
+
         header.setCreateTime(message.getCreateTime());
         Message msg = new Message(header, displayContent);
         String json = convertToJson(msg);
@@ -97,6 +141,7 @@ public class Room {
             }
         }
     }
+
 
     //私聊消息专用
     public void sendPrivateMessage(String content, int senderId, int receiverId, Channel receiverChannel, String senderName) {
@@ -205,4 +250,38 @@ public class Room {
             return null;
         }
     }
+    /**
+     * 广播文件消息给房间内所有用户
+     * @param fileMessage 文件消息对象
+     */
+    /**
+     * 广播文件消息给房间内所有用户
+     */
+    public void broadcastFileMessage(Message fileMessage) {
+        if (isPrivate) {
+            System.err.println("错误：不应在私聊房间使用 broadcastFileMessage");
+            return;
+        }
+
+        if (fileMessage == null || fileMessage.getHeader() == null) {
+            System.err.println("错误：文件消息对象为空");
+            return;
+        }
+
+        // 记录文件消息
+        System.out.println("广播文件消息到房间 [" + this.name + "]: 发送者=" +
+                fileMessage.getHeader().getSender() + ", 消息ID=" +
+                fileMessage.getHeader().getMessageId());
+
+        String json = convertToJson(fileMessage);
+        if (json != null) {
+            for (Channel user : users) {
+                user.writeAndFlush(new TextWebSocketFrame(json));
+            }
+        } else {
+            System.err.println("错误：文件消息转换为JSON失败");
+        }
+    }
+
+
 }

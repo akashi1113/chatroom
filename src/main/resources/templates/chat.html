@@ -106,10 +106,34 @@
             color: #e9f2fb;
         }
 
+        .message-content {
+            line-height: 1.4;
+        }
+
         .input-container {
             display: flex;
             gap: 10px;
             margin-top: auto;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1em;
+        }
+
+        .input-container button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4a76a8;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
         }
 
         #input {
@@ -124,6 +148,10 @@
 
         #input:focus {
             border-color: var(--primary-color);
+        }
+
+        .input-container button:hover {
+            background-color: #3a5f8a;
         }
 
         button {
@@ -222,6 +250,152 @@
             margin-top: 10px;
             text-align: center;
         }
+
+        .file-upload-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .file-upload-button {
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+            border: 1px dashed var(--primary-color);
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+        }
+
+        .file-upload-button:hover {
+            background-color: var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        .upload-status {
+            font-size: 14px;
+            color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .upload-status.info {
+            background-color: #e7f5ff;
+            color: #1c7ed6;
+        }
+
+        .upload-status.success {
+            background-color: #ebfbee;
+            color: #2b8a3e;
+        }
+
+        .upload-status.error {
+            background-color: #fff5f5;
+            color: #c92a2a;
+        }
+
+        /* File message styles */
+        .file-message-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            border: 1px solid #d1e3f8;
+            text-decoration: none !important;
+        }
+
+        .message.self .file-message-container {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .file-icon {
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .file-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .file-name {
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-decoration: none;
+        }
+
+        .file-size {
+            font-size: 12px;
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .download-button {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .message.self .download-button {
+            color: white;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Remove all link underlines */
+        a {
+            text-decoration: none !important;
+        }
+
+        /* File message link styling */
+        .file-message-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: inherit;
+            text-decoration: none !important;
+        }
+
+        .file-message-link:hover {
+            text-decoration: none !important;
+        }
     </style>
 </head>
 <body>
@@ -232,6 +406,18 @@
     </div>
 
     <div id="messages"></div>
+
+    <div class="file-upload-container">
+        <label for="fileInput" class="file-upload-button" title="上传文件 (最大100MB)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <input type="file" id="fileInput" style="display: none;">
+        </label>
+        <div id="fileUploadStatus" class="upload-status"></div>
+    </div>
 
     <div class="input-container">
         <input type="text" id="input" placeholder="输入聊天内容" />
@@ -287,7 +473,6 @@
                             return;
                         }
                         window.open('/private-chat?target=' + encodeURIComponent(username), '_blank','width=800,height=600');
-                        // window.location.href = '/private-chat?target=' + encodeURIComponent(username);
                     });
 
                     userListDiv.appendChild(userDiv);
@@ -342,8 +527,6 @@
             };
             socket.send(JSON.stringify(joinRoomMessage));
 
-            // loadGroupHistory();
-
             // 启动心跳定时器，每30秒发送一次心跳
             setInterval(function() {
                 var heartbeatMessage = {
@@ -364,49 +547,73 @@
             console.log("收到服务器消息: " + event.data);
 
             var data = JSON.parse(event.data);
-            if (data && data.payload) {
+            if (data && data.header) {
                 var messageBox = document.getElementById("messages");
                 var div = document.createElement("div");
 
-                // 创建消息元素
+                // 设置消息基本样式
                 div.className = "message";
-
-                // 检查消息是否包含发送者信息，以确定是否为自己发送的消息
-                var senderName = data.header.sender;
-                var messageContent = data.payload;
-                var createTime = data.header.createTime;
-
-                // 简单解析消息格式，假设格式为 "用户名: 消息内容"
-                if (data.payload.includes(": ")) {
-                    var parts = data.payload.split(": ");
-                    senderName = parts[0];
-                    messageContent = parts.slice(1).join(": ");
-                }
-
-                // 如果发送者是当前用户，添加特殊样式
-                if (senderName === nickname) {
+                if (data.header.sender === nickname) {
                     div.className += " self";
                 }
 
-                // 添加发送者名称元素
-                if (senderName) {
-                    var sender = document.createElement("div");
-                    sender.className = "message-sender";
-                    sender.textContent = senderName + "\u00A0\u00A0\u00A0\u00A0" + formatTime(createTime);                    div.appendChild(sender);
-                    div.appendChild(sender);
-                }
-                else{
-                    var sender = document.createElement("div");
-                    sender.className = "message-sender";
-                    sender.textContent = formatTime(createTime);
-                    div.appendChild(sender);
-                }
+                // 添加发送者名称和时间
+                var sender = document.createElement("div");
+                sender.className = "message-sender";
+                sender.textContent = data.header.sender + "\u00A0\u00A0\u00A0\u00A0" + formatTime(data.header.createTime);
+                div.appendChild(sender);
 
-                // 添加消息内容
-                var content = document.createElement("div");
-                content.className = "message-content";
-                content.textContent = messageContent;
-                div.appendChild(content);
+                // 处理不同类型的消息
+                if (data.header.messageType === "FILE") {
+                    // 文件消息处理
+                    try {
+                        var fileData = typeof data.payload === 'string' ? JSON.parse(data.payload) : data.payload;
+
+                        var fileContainer = document.createElement("div");
+                        fileContainer.className = "file-message-container";
+
+                        var fileLink = document.createElement("a");
+                        fileLink.href = fileData.url || `/files/download/${fileData.fileId}`;
+                        fileLink.className = "file-message-link";
+                        fileLink.target = "_blank";
+
+                        // 文件图标
+                        var fileIcon = document.createElement("span");
+                        fileIcon.className = "file-icon";
+                        fileIcon.innerHTML = getFileIcon(fileData.fileName);
+                        fileLink.appendChild(fileIcon);
+
+                        // 文件信息
+                        var fileInfo = document.createElement("div");
+                        fileInfo.className = "file-info";
+
+                        var fileName = document.createElement("div");
+                        fileName.className = "file-name";
+                        fileName.textContent = fileData.fileName || "未命名文件";
+                        fileInfo.appendChild(fileName);
+
+                        var fileSize = document.createElement("div");
+                        fileSize.className = "file-size";
+                        fileSize.textContent = formatFileSize(fileData.size || 0);
+                        fileInfo.appendChild(fileSize);
+
+                        fileLink.appendChild(fileInfo);
+                        fileContainer.appendChild(fileLink);
+                        div.appendChild(fileContainer);
+                    } catch (e) {
+                        console.error("解析文件消息失败:", e);
+                        var content = document.createElement("div");
+                        content.className = "message-content";
+                        content.textContent = "收到一个文件: " + (data.payload.fileName || data.payload);
+                        div.appendChild(content);
+                    }
+                } else {
+                    // 普通文本消息
+                    var content = document.createElement("div");
+                    content.className = "message-content";
+                    content.textContent = data.payload;
+                    div.appendChild(content);
+                }
 
                 messageBox.appendChild(div);
                 messageBox.scrollTop = messageBox.scrollHeight;
@@ -424,6 +631,32 @@
             console.error("连接错误", error);
             document.getElementById('status').textContent = '连接错误';
         };
+    }
+
+    // 根据文件名获取对应的文件图标
+    function getFileIcon(filename) {
+        if (!filename) return "📄";
+
+        const extension = filename.split('.').pop().toLowerCase();
+        const icons = {
+            // 图片
+            jpg: "🖼️", jpeg: "🖼️", png: "🖼️", gif: "🖼️", bmp: "🖼️", svg: "🖼️", webp: "🖼️",
+            // 文档
+            pdf: "📕", doc: "📄", docx: "📄", xls: "📊", xlsx: "📊", ppt: "📑", pptx: "📑",
+            txt: "📝", csv: "📊",
+            // 压缩文件
+            zip: "🗜️", rar: "🗜️", "7z": "🗜️", tar: "🗜️", gz: "🗜️",
+            // 音频
+            mp3: "🎵", wav: "🎵", ogg: "🎵", flac: "🎵",
+            // 视频
+            mp4: "🎬", avi: "🎬", mkv: "🎬", mov: "🎬", wmv: "🎬",
+            // 代码
+            js: "📜", java: "📜", py: "📜", html: "🌐", css: "🎨", json: "📋", xml: "📋",
+            // 其他
+            exe: "⚙️", dmg: "💿", apk: "📱"
+        };
+
+        return icons[extension] || "📄";
     }
 
     function formatTime(timestamp) {
@@ -452,7 +685,6 @@
     function sendMessage() {
         var input = document.getElementById("input");
         var content = input.value.trim();
-        var roomName = [[${roomName}]];
         if (!content) return;
 
         var chatMessage = {
@@ -461,7 +693,9 @@
                 messageId: new Date().getTime().toString(),
                 messageLength: content.length,
                 checksum: content.hashCode(),
-                roomName: roomName
+                roomName: roomName,
+                sender: nickname,
+                createTime: new Date().getTime()
             },
             payload: content
         };
@@ -469,23 +703,6 @@
         socket.send(JSON.stringify(chatMessage));
         input.value = '';
     }
-
-    // 加载群聊历史消息
-    function loadGroupHistory() {
-        var roomName = [[${roomName}]];
-        var historyRequest = {
-            header: {
-                messageType: "GET_HISTORY",
-                messageId: new Date().getTime().toString(),
-                roomName: roomName,  // 当前群聊房间名
-                messageLength: roomName.length,
-                checksum: roomName.hashCode()
-            },
-            payload: ""  // 可为空或携带额外参数
-        };
-        socket.send(JSON.stringify(historyRequest));
-    }
-
 
     // 按回车键发送消息
     document.getElementById("input").addEventListener("keypress", function(event) {
@@ -503,6 +720,103 @@
         }
         return hash;
     };
+
+    // 文件上传处理
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        // 检查文件大小 (100MB限制)
+        const maxSize = 100 * 1024 * 1024; // 100MB
+        if (file.size > maxSize) {
+            updateUploadStatus(`文件大小超过100MB限制`, 'error');
+            return;
+        }
+
+        const statusDiv = document.getElementById('fileUploadStatus');
+        statusDiv.innerHTML = `
+            <div>正在上传 ${file.name}...</div>
+            <div class="progress-bar">
+                <div class="progress" id="uploadProgress"></div>
+            </div>
+        `;
+        statusDiv.className = 'upload-status info';
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('sender', nickname);
+        formData.append('roomId', roomId); // 使用当前房间ID
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/files/upload', true);
+
+        // 上传进度监听
+        xhr.upload.addEventListener('progress', function(e) {
+            if (e.lengthComputable) {
+                const percent = Math.round((e.loaded / e.total) * 100);
+                document.getElementById('uploadProgress').style.width = percent + '%';
+            }
+        });
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                try {
+                    const response = JSON.parse(xhr.responseText);
+                    statusDiv.innerHTML = `上传成功: ${response.fileName}`;
+                    statusDiv.className = 'upload-status success';
+
+                    // 3秒后清除状态
+                    setTimeout(() => {
+                        statusDiv.textContent = '';
+                        statusDiv.className = 'upload-status';
+                    }, 3000);
+                } catch (e) {
+                    statusDiv.innerHTML = '上传成功，但解析响应失败';
+                    statusDiv.className = 'upload-status error';
+                }
+            } else {
+                try {
+                    const errorResponse = JSON.parse(xhr.responseText);
+                    statusDiv.innerHTML = `上传失败: ${errorResponse.message || xhr.statusText}`;
+                    statusDiv.className = 'upload-status error';
+                } catch {
+                    statusDiv.innerHTML = `上传失败: ${xhr.statusText}`;
+                    statusDiv.className = 'upload-status error';
+                }
+            }
+            // 重置文件输入
+            e.target.value = '';
+        };
+
+        xhr.onerror = function() {
+            statusDiv.innerHTML = '上传失败: 网络错误';
+            statusDiv.className = 'upload-status error';
+            e.target.value = '';
+        };
+
+        xhr.send(formData);
+    });
+
+    // 更新上传状态函数
+    function updateUploadStatus(message, type) {
+        const statusDiv = document.getElementById('fileUploadStatus');
+        statusDiv.textContent = message;
+        statusDiv.className = `upload-status ${type}`;
+
+        setTimeout(() => {
+            statusDiv.textContent = '';
+            statusDiv.className = 'upload-status';
+        }, 3000);
+    }
+
+    // 文件大小格式化函数
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
 
     // 页面加载完成后自动连接
     window.onload = function() {

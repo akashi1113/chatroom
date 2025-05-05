@@ -12441,3 +12441,1069 @@
 2025-05-03T17:26:23.383+08:00  INFO 17308 --- [chatRoom] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
 2025-05-03T17:26:23.400+08:00  INFO 17308 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-05-03T17:26:23.414+08:00  INFO 17308 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T00:07:46.393+08:00  INFO 34684 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Starting ChatRoomApplication using Java 21.0.1 with PID 34684 (C:\Users\69378\Desktop\chatroom7\target\classes started by 69378 in C:\Users\69378\Desktop\chatroom7)
+2025-05-06T00:07:46.394+08:00  INFO 34684 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T00:07:47.221+08:00  INFO 34684 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T00:07:47.232+08:00  INFO 34684 --- [chatRoom] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T00:07:47.232+08:00  INFO 34684 --- [chatRoom] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-06T00:07:47.271+08:00  INFO 34684 --- [chatRoom] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T00:07:47.272+08:00  INFO 34684 --- [chatRoom] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 839 ms
+2025-05-06T00:07:47.743+08:00 DEBUG 34684 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2025-05-06T00:07:47.815+08:00 DEBUG 34684 --- [chatRoom] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-06T00:07:47.839+08:00 DEBUG 34684 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-06T00:07:47.915+08:00 DEBUG 34684 --- [chatRoom] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-06T00:07:48.007+08:00  INFO 34684 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T00:07:48.012+08:00  INFO 34684 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Started ChatRoomApplication in 1.98 seconds (process running for 3.098)
+2025-05-06T00:07:52.193+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T00:07:52.193+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T00:07:52.193+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-05-06T00:07:52.193+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-05-06T00:07:52.194+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-05-06T00:07:52.194+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7f1c7f20
+2025-05-06T00:07:52.194+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7cd88d77
+2025-05-06T00:07:52.195+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-05-06T00:07:52.195+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-06T00:07:52.202+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:07:52.212+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:07:52.245+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:07:52.246+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:07:52.257+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:07:53.458+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:07:53.458+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:07:53.459+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:07:53.459+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:07:53.460+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:07:53.845+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/chat/7", parameters={}
+2025-05-06T00:07:53.846+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:07:53.884+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T00:07:54.188+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78256806
+2025-05-06T00:07:54.189+08:00  INFO 34684 --- [chatRoom] [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T00:07:54.222+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:07:54.222+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:07:54.229+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:07:54.229+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:07:54.232+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:07:54.398+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:01.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:08:01.007+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:08:01.017+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:08:01.017+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:08:01.025+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:08:01.025+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:08:01.032+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:01.068+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:02.657+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:08:02.658+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:08:02.663+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:02.691+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:02.722+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:02.723+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:02.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:02.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:02.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:07.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:08.783+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/files/upload", parameters={multipart}
+2025-05-06T00:08:08.823+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.FileController#uploadFile(MultipartFile, String, Integer, HttpSession)
+2025-05-06T00:08:08.884+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:08.884+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{fileId=ae3ddd49-4bad-440a-a6e9-dd4dda649819___________.docx, url=/files/download/ae3ddd49-4bad-440a (truncated)...]
+2025-05-06T00:08:08.890+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:12.713+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/files/download/ae3ddd49-4bad-440a-a6e9-dd4dda649819___________.docx", parameters={}
+2025-05-06T00:08:12.714+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.FileController#downloadFile(String, HttpSession, HttpServletRequest)
+2025-05-06T00:08:12.743+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:12.743+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:12.744+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:12.744+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:12.745+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:12.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/vnd.openxmlformats-officedocument.wordprocessingml.document' in response
+2025-05-06T00:08:12.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [InputStream resource [resource loaded through InputStream]]
+2025-05-06T00:08:12.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:17.736+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:17.737+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:17.737+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:17.738+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:17.738+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:22.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:22.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:22.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:22.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:22.729+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:22.939+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:08:22.940+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:08:22.944+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:08:22.945+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:08:22.951+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/login;jsessionid=D044C1A8764D3A5472BCAD959583431F", parameters={}
+2025-05-06T00:08:22.952+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:08:22.953+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:22.954+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:24.717+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2025-05-06T00:08:24.722+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-05-06T00:08:24.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-05-06T00:08:24.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-05-06T00:08:24.729+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-05-06T00:08:24.736+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-05-06T00:08:24.738+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-05-06T00:08:24.742+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2025-05-06T00:08:24.744+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue May 06 00:08:24 CST 2025, status=404, error=Not Found, path=/favicon.ico}]
+2025-05-06T00:08:24.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-05-06T00:08:27.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:27.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:27.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:27.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:27.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:31.350+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:08:31.351+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:08:31.355+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:08:31.356+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:08:31.360+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:08:31.360+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:08:31.364+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:31.369+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:32.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:32.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:32.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:32.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:32.729+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:33.014+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:08:33.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:08:33.019+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:33.023+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:33.063+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:33.064+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:33.065+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:33.065+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:33.066+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:37.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:37.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:37.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:37.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:37.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:38.077+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:38.077+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:38.077+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:38.078+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:38.078+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:42.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:42.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:42.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:42.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:42.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:43.271+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:43.271+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:43.271+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:43.271+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:43.272+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:44.423+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=123", parameters={masked}
+2025-05-06T00:08:44.423+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:08:44.426+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:08:44.434+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:47.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:47.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:47.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:47.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:47.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:48.064+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:48.064+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:48.064+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:48.064+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:08:48.065+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:52.731+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:52.732+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:52.732+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:52.733+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:52.734+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:53.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:53.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:53.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:53.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:57.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:57.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:57.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:57.725+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:57.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:08:58.066+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:08:58.066+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:08:58.066+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:08:58.066+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:08:58.067+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:01.335+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:09:01.336+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:09:01.339+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:01.341+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:01.392+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:01.392+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:01.393+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:01.393+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:01.393+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:02.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:02.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:02.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:02.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:02.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:06.758+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:06.758+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:06.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:06.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:06.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:07.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:11.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:11.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:11.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:11.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:11.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:12.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:12.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:12.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:12.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:12.730+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:16.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:16.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:16.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:16.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:16.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:17.723+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:17.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:17.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:17.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:17.724+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:18.871+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:09:18.872+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:09:18.876+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:18.878+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:18.931+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:18.931+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:18.932+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:18.932+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:09:18.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:21.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:21.761+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:21.762+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:21.762+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:09:21.763+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:23.940+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:23.941+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:23.941+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:23.941+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:09:23.942+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:23.961+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:09:23.962+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:09:23.962+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:23.964+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:26.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:26.759+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:26.760+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:26.760+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:09:26.761+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:31.434+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:09:31.435+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:09:31.439+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:09:31.439+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:09:31.441+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:09:31.441+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:09:31.449+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:31.452+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:31.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:31.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:31.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:31.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:31.751+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:32.945+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:09:32.945+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:09:32.949+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:32.951+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:33.000+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:33.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:36.393+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:36.394+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:36.394+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:36.394+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:36.395+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:37.827+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:09:37.828+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:09:37.830+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:09:37.831+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:37.884+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:37.885+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:37.885+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:37.885+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:37.886+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:38.009+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:38.013+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:38.013+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:38.013+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:38.013+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:42.899+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:42.899+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:42.900+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:42.900+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:42.901+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:43.007+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:43.007+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:43.008+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:43.008+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:43.009+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:48.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:48.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:48.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:48.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:48.016+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:53.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:53.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:53.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:53.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:53.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:09:58.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:09:58.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:09:58.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:09:58.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:09:58.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:01.420+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:10:01.420+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:10:01.421+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:10:01.422+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:02.930+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2025-05-06T00:10:02.930+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-05-06T00:10:02.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-05-06T00:10:02.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-05-06T00:10:02.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-05-06T00:10:02.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-05-06T00:10:02.933+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-05-06T00:10:02.938+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2025-05-06T00:10:02.938+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue May 06 00:10:02 CST 2025, status=404, error=Not Found, path=/favicon.ico}]
+2025-05-06T00:10:02.939+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-05-06T00:10:03.014+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:03.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:03.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:03.015+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:10:03.016+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:08.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:08.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:08.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:08.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:10:08.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:11.217+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:10:11.217+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:10:11.221+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:10:11.221+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:10:11.225+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/chat-home;jsessionid=25B2C085A74DAD150858A453EFF3FE10", parameters={}
+2025-05-06T00:10:11.225+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:10:11.228+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:10:11.231+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:12.666+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:10:12.666+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:10:12.668+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:10:12.669+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:12.711+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:12.712+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:12.712+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:12.712+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:12.713+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:13.000+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:13.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:13.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:13.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:13.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:17.392+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=123", parameters={masked}
+2025-05-06T00:10:17.392+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:10:17.393+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:10:17.394+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:17.715+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:17.715+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:17.716+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:17.716+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:17.716+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:18.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:18.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:18.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:18.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:18.011+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:22.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:22.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:22.729+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:22.729+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:22.730+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:23.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:23.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:23.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:23.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:10:23.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:27.126+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=huqi", parameters={masked}
+2025-05-06T00:10:27.127+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:10:27.128+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:10:27.129+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:27.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:27.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:27.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:27.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:10:27.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:28.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:28.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:28.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:28.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:10:28.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:32.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:32.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:32.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:32.751+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:32.751+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:33.000+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:33.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:37.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:37.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:37.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:37.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:37.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:38.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:38.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:38.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:38.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:38.004+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:42.712+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:42.712+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:42.713+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:42.713+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:42.713+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:43.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:43.004+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:43.005+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:43.005+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:43.006+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:47.726+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:47.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:47.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:47.727+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:47.728+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:48.000+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:48.000+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:48.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:48.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:48.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:52.721+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:52.721+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:52.722+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:52.722+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:52.722+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:53.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:53.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:53.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:53.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:53.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:57.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:57.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:57.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:57.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:57.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:10:58.001+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:10:58.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:10:58.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:10:58.002+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:10:58.003+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:02.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:02.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:02.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:02.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:02.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:03.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:03.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:03.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:03.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:03.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:07.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:07.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:07.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:07.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:07.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:08.788+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:08.789+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:08.789+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:08.789+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:08.790+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:12.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:12.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:12.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:12.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:12.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:13.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:13.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:13.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:13.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:13.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:17.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:17.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:17.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:17.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:17.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:18.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:18.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:18.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:18.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:18.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:22.760+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:22.761+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:22.761+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:22.761+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:22.762+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:23.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:23.747+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:23.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:23.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:23.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:27.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:27.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:27.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:27.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:27.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:28.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:28.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:28.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:28.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:28.755+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:32.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:32.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:32.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:32.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:32.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:33.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:33.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:33.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:33.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:33.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:37.751+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:37.752+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:37.752+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:37.753+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:37.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:38.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:38.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:38.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:38.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:38.754+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:42.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:42.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:42.758+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:42.758+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:42.758+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:43.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:43.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:43.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:43.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:43.757+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:47.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:47.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:47.746+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:47.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:47.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:48.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:48.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:48.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:48.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:48.751+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:52.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:52.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:52.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:52.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:52.756+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:11:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:11:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:11:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:11:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:11:53.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:08.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:12:08.748+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:08.749+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:12:08.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:12:08.750+08:00 DEBUG 34684 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:33.778+08:00  INFO 34684 --- [chatRoom] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T00:12:33.795+08:00  INFO 34684 --- [chatRoom] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T00:12:33.801+08:00  INFO 34684 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T00:12:33.812+08:00  INFO 34684 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T00:12:38.079+08:00  INFO 34132 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Starting ChatRoomApplication using Java 21.0.1 with PID 34132 (C:\Users\69378\Desktop\chatroom7\target\classes started by 69378 in C:\Users\69378\Desktop\chatroom7)
+2025-05-06T00:12:38.082+08:00  INFO 34132 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T00:12:38.877+08:00  INFO 34132 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T00:12:38.890+08:00  INFO 34132 --- [chatRoom] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T00:12:38.891+08:00  INFO 34132 --- [chatRoom] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-06T00:12:38.934+08:00  INFO 34132 --- [chatRoom] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T00:12:38.934+08:00  INFO 34132 --- [chatRoom] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 813 ms
+2025-05-06T00:12:39.388+08:00 DEBUG 34132 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2025-05-06T00:12:39.431+08:00 DEBUG 34132 --- [chatRoom] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-06T00:12:39.448+08:00 DEBUG 34132 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-06T00:12:39.499+08:00 DEBUG 34132 --- [chatRoom] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-06T00:12:39.584+08:00  INFO 34132 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T00:12:39.592+08:00  INFO 34132 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Started ChatRoomApplication in 1.872 seconds (process running for 2.376)
+2025-05-06T00:12:41.418+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T00:12:41.418+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T00:12:41.418+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-05-06T00:12:41.418+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-05-06T00:12:41.419+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-05-06T00:12:41.420+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5c47b5b2
+2025-05-06T00:12:41.420+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@41c5ab19
+2025-05-06T00:12:41.420+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-05-06T00:12:41.420+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-06T00:12:41.426+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:12:41.432+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:12:41.464+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:12:41.465+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:12:41.475+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:43.004+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:12:43.004+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:12:43.005+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:12:43.005+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:12:43.006+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:43.152+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:12:43.153+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:12:43.187+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T00:12:43.490+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-8] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2392859c
+2025-05-06T00:12:43.491+08:00  INFO 34132 --- [chatRoom] [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T00:12:43.523+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:12:43.524+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:12:43.530+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:12:43.531+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:12:43.534+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:12:43.705+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:52.145+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:12:52.146+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:12:52.157+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:12:52.158+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:12:52.164+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:12:52.165+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:12:52.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:12:52.201+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:53.616+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:12:53.617+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:12:53.618+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:12:53.618+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:12:53.620+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:12:56.787+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:12:56.788+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:12:56.788+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:12:56.790+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:03.707+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:13:03.707+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:13:03.714+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:13:03.714+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:13:03.718+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:13:03.718+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:13:03.721+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:13:03.724+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:04.914+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/chat/6", parameters={}
+2025-05-06T00:13:04.914+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:13:04.918+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:13:04.947+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:04.968+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:04.969+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:04.969+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:04.969+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:04.970+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:10.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:10.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:10.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:10.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:10.749+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:11.113+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/chat/6", parameters={}
+2025-05-06T00:13:11.113+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:13:11.116+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:13:11.119+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:11.169+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:11.169+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:11.170+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:11.170+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:11.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:15.746+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:15.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:15.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:15.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:15.748+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:16.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:16.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:16.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:16.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:16.173+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:19.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:19.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:19.972+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:19.972+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:19.972+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:21.174+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:21.174+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:21.175+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:21.175+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:21.176+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:24.693+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=huqi", parameters={masked}
+2025-05-06T00:13:24.694+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:13:24.699+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:13:24.705+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:25.076+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:25.076+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:25.076+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:25.077+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:25.077+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:26.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:26.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:26.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:26.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:26.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:29.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:29.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:29.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:29.976+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:29.977+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:31.173+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:31.174+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:31.174+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:31.175+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, huqi]]
+2025-05-06T00:13:31.176+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:34.982+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:34.983+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:34.984+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:34.984+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:34.984+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:36.173+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:36.174+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:36.175+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:36.175+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:36.176+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:39.971+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:39.972+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:39.972+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:39.973+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:39.973+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:41.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:41.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:41.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:41.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:41.173+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:44.982+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:44.983+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:44.983+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:44.984+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:44.985+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:46.170+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:46.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:46.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:46.171+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:46.172+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:50.756+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:50.757+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:50.757+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:50.757+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:50.759+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:51.754+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:51.755+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:51.755+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:51.755+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:51.756+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:55.752+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:55.752+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:55.753+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:55.753+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:55.754+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:13:56.749+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:13:56.749+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:13:56.749+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:13:56.749+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:13:56.750+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:14:00.759+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:14:00.759+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:14:00.761+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:14:00.761+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[huqi]]
+2025-05-06T00:14:00.762+08:00 DEBUG 34132 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:14:01.384+08:00  INFO 34132 --- [chatRoom] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T00:14:01.391+08:00  INFO 34132 --- [chatRoom] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T00:14:01.396+08:00  INFO 34132 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T00:14:01.405+08:00  INFO 34132 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-06T00:29:12.075+08:00  INFO 1596 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Starting ChatRoomApplication using Java 21.0.1 with PID 1596 (C:\Users\69378\Desktop\chatroom7\target\classes started by 69378 in C:\Users\69378\Desktop\chatroom7)
+2025-05-06T00:29:12.077+08:00  INFO 1596 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-06T00:29:12.827+08:00  INFO 1596 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-06T00:29:12.842+08:00  INFO 1596 --- [chatRoom] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-06T00:29:12.842+08:00  INFO 1596 --- [chatRoom] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-06T00:29:12.888+08:00  INFO 1596 --- [chatRoom] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-06T00:29:12.888+08:00  INFO 1596 --- [chatRoom] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 775 ms
+2025-05-06T00:29:13.401+08:00 DEBUG 1596 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2025-05-06T00:29:13.446+08:00 DEBUG 1596 --- [chatRoom] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-06T00:29:13.463+08:00 DEBUG 1596 --- [chatRoom] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-06T00:29:13.524+08:00 DEBUG 1596 --- [chatRoom] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-06T00:29:13.595+08:00  INFO 1596 --- [chatRoom] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-06T00:29:13.599+08:00  INFO 1596 --- [chatRoom] [main] org.csu.chatroom.ChatRoomApplication     : Started ChatRoomApplication in 1.932 seconds (process running for 2.427)
+2025-05-06T00:29:13.650+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-06T00:29:13.650+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-06T00:29:13.650+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-05-06T00:29:13.651+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-05-06T00:29:13.651+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-05-06T00:29:13.652+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5b3a291b
+2025-05-06T00:29:13.652+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6cadc409
+2025-05-06T00:29:13.653+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-05-06T00:29:13.653+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-06T00:29:13.661+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:13.673+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:13.706+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:13.708+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:29:13.720+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:17.563+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:17.564+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:17.565+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:17.565+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-05-06T00:29:17.565+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:19.438+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/chat/6", parameters={}
+2025-05-06T00:29:19.440+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:29:19.480+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-06T00:29:19.726+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b88f00b
+2025-05-06T00:29:19.728+08:00  INFO 1596 --- [chatRoom] [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-06T00:29:19.762+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:29:19.762+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:29:19.769+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:29:19.769+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:29:19.773+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:19.952+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:28.834+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:29:28.835+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:29:28.844+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:29:28.844+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:29:28.850+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:29:28.851+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:29:28.858+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:28.883+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:30.195+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:29:30.196+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:29:30.200+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:30.225+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:30.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:30.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:30.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:30.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:29:30.311+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:34.595+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:34.595+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:34.596+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:34.596+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:29:34.597+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:35.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:35.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:35.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:35.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:29:35.311+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:36.560+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/chat/6", parameters={}
+2025-05-06T00:29:36.562+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:29:36.565+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:29:36.565+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:29:36.570+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-05-06T00:29:36.570+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#loginPage()
+2025-05-06T00:29:36.571+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:36.573+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:40.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:40.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:40.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:40.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123]]
+2025-05-06T00:29:40.311+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:42.816+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2025-05-06T00:29:42.816+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#login(String, String, HttpSession)
+2025-05-06T00:29:42.821+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {}
+2025-05-06T00:29:42.821+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-05-06T00:29:42.824+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/chat-home", parameters={}
+2025-05-06T00:29:42.826+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatHome(HttpSession, Model)
+2025-05-06T00:29:42.829+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:42.833+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:45.100+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/chat/10", parameters={}
+2025-05-06T00:29:45.100+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.ChatController#chatPage(Model, HttpSession, int)
+2025-05-06T00:29:45.104+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:45.107+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:45.152+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:45.153+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:45.153+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:45.153+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:45.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:45.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:45.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:45.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:45.311+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:45.312+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:48.802+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=123", parameters={masked}
+2025-05-06T00:29:48.803+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:29:48.806+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:48.814+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:50.153+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:50.154+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:50.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:50.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:50.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:50.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:50.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:50.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:50.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:50.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:55.154+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:55.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:55.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:55.155+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:55.156+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:55.310+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:29:55.312+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:29:55.313+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:29:55.313+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:29:55.314+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:29:56.868+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/private-chat?target=1234", parameters={masked}
+2025-05-06T00:29:56.869+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.PrivateChatController#privateChatPage(String, Model, HttpSession)
+2025-05-06T00:29:56.870+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-05-06T00:29:56.872+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:00.314+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:00.314+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:00.315+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:00.315+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:00.315+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:00.759+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:00.760+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:00.760+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:00.760+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:00.761+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:05.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:05.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:05.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:05.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:05.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:05.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:05.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:05.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:05.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:05.755+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:10.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:10.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:10.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:15.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:15.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:15.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:15.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:15.753+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:15.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:15.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:15.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:15.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:15.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:20.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:20.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:20.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:20.751+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:20.752+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:25.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:25.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:25.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:25.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:25.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:30.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:30.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:30.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:30.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:30.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:35.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:35.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:35.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:35.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:35.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:40.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:45.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:50.754+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:30:55.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:30:55.749+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:30:55.750+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:30:55.750+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:30:55.750+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:00.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:31:00.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:31:00.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:31:00.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:31:00.745+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:31:08.744+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:31:08.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:31:08.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:31:08.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:08.746+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:11.515+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:31:11.516+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:31:11.517+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:31:11.517+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:31:11.517+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:15.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/online-users", parameters={}
+2025-05-06T00:31:15.308+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.csu.chatroom.controller.LoginController#getOnlineUsers()
+2025-05-06T00:31:15.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-05-06T00:31:15.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[123, 1234]]
+2025-05-06T00:31:15.309+08:00 DEBUG 1596 --- [chatRoom] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-05-06T00:31:17.528+08:00  INFO 1596 --- [chatRoom] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-06T00:31:17.539+08:00  INFO 1596 --- [chatRoom] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-06T00:31:17.544+08:00  INFO 1596 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-06T00:31:17.553+08:00  INFO 1596 --- [chatRoom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @Component
- // 仅在 "dev" 环境下启动
+// 仅在 "dev" 环境下启动
 public class NettyServer {
     private final int port = 8081;
     private final Map<Channel, Boolean> privateConnections = new ConcurrentHashMap<>();
@@ -122,7 +122,7 @@ public class NettyServer {
     }
 
     public Channel getChannelByUsername(String username,boolean isPrivate) {
-         return isPrivate ? privateChannels.get(username) : groupChannels.get(username);
+        return isPrivate ? privateChannels.get(username) : groupChannels.get(username);
     }
 
     public void start() throws InterruptedException {
@@ -248,19 +248,65 @@ public class NettyServer {
         return userRooms.get(channel);
     }
 
+    //    public void leaveRoom(Channel channel) {
+//        Room room;
+//        if (isPrivateConnection(channel)) {
+//            room=privateRooms.remove(channel);
+//        } else {
+//            room=groupRooms.remove(channel);
+//        }
+//        if (room != null) {
+//            room.removeUser(channel);
+//            String username = getUsernameByChannel(channel);
+//            room.broadcastMessage(username + " 已离开 " + " 📢",-1);
+//        }
+//    }
     public void leaveRoom(Channel channel) {
         Room room;
+        String username = getUsernameByChannel(channel);
+
         if (isPrivateConnection(channel)) {
-            room=privateRooms.remove(channel);
+            // 私聊房间处理
+            room = privateRooms.remove(channel);
+            if (room != null) {
+                room.removeUser(channel);
+                // 不要广播消息，因为这是私聊
+                System.out.println(username + " 离开了私聊");
+
+                // 从私聊连接映射中移除
+                if (username != null) {
+                    privateChannels.remove(username);
+                }
+            }
         } else {
-            room=groupRooms.remove(channel);
+            // 群聊房间处理
+            room = groupRooms.remove(channel);
+            if (room != null) {
+                room.removeUser(channel);
+                // 只在群聊中广播离开消息
+                room.broadcastMessage(username + " 已离开 " + room.getName() + " 📢", -1);
+
+                // 从群聊连接映射中移除
+                if (username != null) {
+                    groupChannels.remove(username);
+                }
+            }
         }
-        if (room != null) {
-            room.removeUser(channel);
-            String username = getUsernameByChannel(channel);
-            room.broadcastMessage(username + " 已离开 " + " 📢",-1);
+
+        // 检查用户是否还有其他连接
+        if (username != null) {
+            boolean hasOtherConnections =
+                    (privateChannels.containsKey(username) || groupChannels.containsKey(username));
+
+            if (!hasOtherConnections) {
+                System.out.println("用户 " + username + " 的所有连接已断开，从在线列表中移除");
+                // 这里应该有通知其他用户更新在线列表的逻辑
+            } else {
+                System.out.println("用户 " + username + " 仍有其他连接活跃，保持在线状态");
+            }
         }
     }
+
 
     // 获取或创建私聊房间
     public synchronized Room getOrCreatePrivateRoom(String currentUser, String targetUser) {
@@ -315,5 +361,60 @@ public class NettyServer {
             }
         }
     }
+    /**
+     * 发送群聊文件消息
+     * @param roomId 房间ID
+     * @param message 文件消息
+     */
+    /**
+     * 发送群聊文件消息
+     */
+    public void sendGroupFileMessage(Integer roomId, Message message) {
+        if (roomId == null) {
+            System.err.println("发送群组文件消息失败：roomId为空");
+            return;
+        }
+
+        try {
+            // 获取房间对象
+            org.csu.chatroom.entity.Room dbRoom = roomService.getRoomById(roomId);
+            if (dbRoom == null) {
+                System.err.println("发送群组文件消息失败：找不到房间ID " + roomId);
+                return;
+            }
+
+            String roomName = dbRoom.getName();
+            Room room = getOrCreateRoom(roomName);
+
+            // 记录调试信息
+            System.out.println("准备发送文件消息到房间：" + roomName +
+                    "，发送者：" + message.getHeader().getSender() +
+                    "，文件ID：" + message.getHeader().getMessageId());
+
+            // 使用Room对象的广播文件方法
+            room.broadcastFileMessage(message);
+
+            System.out.println("文件消息发送完成：" + message.getHeader().getMessageId());
+        } catch (Exception e) {
+            System.err.println("发送群组文件消息失败：" + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 获取组房间
+     * @param roomId 房间ID
+     * @return 房间对象
+     */
+    public Room getGroupRoomById(Integer roomId) {
+        if (roomId == null) return null;
+
+        org.csu.chatroom.entity.Room dbRoom = roomService.getRoomById(roomId);
+        if (dbRoom == null) return null;
+
+        return getOrCreateRoom(dbRoom.getName());
+    }
+
 }
 

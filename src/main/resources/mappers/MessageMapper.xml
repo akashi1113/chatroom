@@ -48,7 +48,13 @@
     </select>
 
     <select id="getPrivateMessages">
-        SELECT * FROM message
+        SELECT
+            id,
+            content,
+            sender,
+            receiver,
+            create_time as createTime
+        FROM message
         WHERE (sender = #{user1} AND receiver = #{user2})
            OR (sender = #{user2} AND receiver = #{user1})
         ORDER BY create_time ASC
